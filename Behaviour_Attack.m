@@ -37,7 +37,8 @@ v_AlphaBM = imresize(v_AlphaBM, [ImageWidth ImageWidth], 'lanczos3' );
 [v_ImageBF,v_AlphaBF,v_ImageF,v_AlphaF, v_ImageBat, v_AlphaBat]=LoadImageBase();
 [v_ImageBoom,v_AlphaBoom,v_ImageN,v_AlphaN,v_ImageEmpty,v_AlphaEmpty]=LoadImageBoom();
 [v_ImageFR,v_AlphaFR,v_ImageFB,v_AlphaFB]=LoadImageFlag();
-[v_ImageFence,v_AlphaFence]=LoadImageFence();
+[v_ImageFence1,v_AlphaFence1]=LoadImageFence1();
+[v_ImageFence2,v_AlphaFence2]=LoadImageFence2();
 [v_ImageHome,v_AlphaHome]=LoadImageHome();
 
 % draw graphic
@@ -47,8 +48,8 @@ v_AlphaBM = imresize(v_AlphaBM, [ImageWidth ImageWidth], 'lanczos3' );
 [BasesPlot]=InitializeBase(v_ImageBF,v_AlphaBF);
 
 % draw fence and house
-[FencePlot]=InitializeFence(v_ImageFence,v_AlphaFence);
-
+[Fence1Plot]=InitializeFence1(v_ImageFence1,v_AlphaFence1);
+[Fence2Plot]=InitializeFence2(v_ImageFence2,v_AlphaFence2);
 [HousePlot]=InitializeHouse(v_ImageHome,v_AlphaHome);
 
 % draw flight
