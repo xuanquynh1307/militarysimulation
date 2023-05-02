@@ -8,10 +8,6 @@ for i = 1: BattleshipsNum
     alpha_i = imrotate(v_Alpha, angle );
     BattleshipsPlot(i) = image(Battleships(i,1), Battleships(i,2), img_i);
     BattleshipsPlot(i).AlphaData = alpha_i;   
-    %ObstaclesBat(i,1)=Battleships(i,2);
-    %ObstaclesBat(i,2)=Battleships(i,1);
-    %ObstaclesBat(i,1)=150;
-    %ObstaclesBat(i,2)=400;
-    ObstaclesBat(i,1)=250;
-    ObstaclesBat(i,2)=300;
+    ObstaclesBat(i,1)=0;
+    ObstaclesBat(i,2)=-180;
 end

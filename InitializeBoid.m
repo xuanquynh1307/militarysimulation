@@ -5,7 +5,7 @@ global ImageWidth;
 axis([-EnvironmentWidth EnvironmentWidth -EnvironmentWidth EnvironmentWidth]);
 
 for i=1:OBJNum
-    angle = -90;	% imrotate rotates ccw  
+    angle = -180;	% imrotate rotates ccw  
     disp(i)
         if (OBJs(i,15)>=0)
             img_i = imrotate(v_Image, angle);
