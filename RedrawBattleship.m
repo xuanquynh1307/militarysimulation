@@ -6,7 +6,7 @@ for i = 1: BattleshipsNum
     angle = 180;	% imrotate rotates ccw     
     img_i = imrotate(v_Image, angle);
     alpha_i = imrotate(v_Alpha, angle);
-    BattleshipsPlot(i).CData=img_i;
+    %BattleshipsPlot(i).CData=img_i;
     BattleshipsPlot(i).AlphaData=alpha_i;
     try
         BattleshipsPlot(i).XData=Battleships(i,1) ;

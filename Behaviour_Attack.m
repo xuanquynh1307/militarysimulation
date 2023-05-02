@@ -63,7 +63,7 @@ v_AlphaBM = imresize(v_AlphaBM, [ImageWidth ImageWidth], 'lanczos3' );
 [RedsLQPlot]=InitializeBoid(v_ImageR,v_AlphaR,v_ImageE,v_AlphaE,RedsLQNum,RedsLQ);
 [RedsLQHP]=InitializeHP(RedsLQNum,RedsLQNum,RedsLQ);
 % draw red LQ1 soldier
-[RedsLQ1Plot]=InitializeBoid(v_ImageR,v_AlphaR,v_ImageE,v_AlphaE,RedsLQ1Num,RedsLQ1);
+%[RedsLQ1Plot]=InitializeBoid(v_ImageR,v_AlphaR,v_ImageE,v_AlphaE,RedsLQ1Num,RedsLQ1);
 [RedsLQ1HP]=InitializeHP(RedsLQ1Num,RedsLQ1Num,RedsLQ1);
 %%load sound
 [bomb,gun,fight,bombFs,gunFs,fightFs]=loadSound();

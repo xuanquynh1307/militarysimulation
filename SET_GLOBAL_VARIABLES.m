@@ -38,7 +38,7 @@ Reds = zeros(MaxRedNum,15); % initialize boids matrix
 %}
 MaxRedHP = 100;
 Reds(:,1) = EnvironmentWidth/10*(rand([MaxRedNum,1]))+550; % set random position
-Reds(:,2) = EnvironmentWidth/10*(rand([MaxRedNum,1]))-200; % set random position
+Reds(:,2) = EnvironmentWidth/10*(rand([MaxRedNum,1]))+200; % set random position
 %Reds(:,1:2) = 2; % set random position EnvironmentWidth*(2*rand([RedsNum,2])-1)
 Reds(:,4:5) = 200; %200*(2*rand([BoidsNum,2])-1); % set random velocity
 Reds(:,10) = 3;%*(rand([BoidsNum,1]) + 0.2); % set maxspeed
@@ -70,8 +70,8 @@ RedsLQ = zeros(RedsLQNum,15); % initialize boids matrix
 %}
 %Blues(:,1:2) = EnvironmentWidth*(2*rand([BluesNum,2])-1); % set random positionB
 MaxLQHP = 120;
-RedsLQ(:,1) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-0; % set random position
-RedsLQ(:,2) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-0; % set random position
+RedsLQ(:,1) = EnvironmentWidth/10*(rand([RedsLQNum,1]))+500; % set random position
+RedsLQ(:,2) = EnvironmentWidth/10*(rand([RedsLQNum,1]))+500; % set random position
 RedsLQ(:,3) = 100;
 RedsLQ(:,4:5) = 200; %200*(2*rand([BoidsNum,2])-1); % set random velocity
 RedsLQ(:,10) = 5;%*(rand([BoidsNum,1]) + 0.2); % set maxspeed

@@ -16,3 +16,4 @@ v_AlphaBat = imresize(v_AlphaBat, [100 100], 'lanczos3' );
 [v_ImageTa, ~, v_AlphaTa]	= imread('Tank.png');
 v_ImageTa = imresize(v_ImageTa, [100 100], 'lanczos3' );
 v_AlphaTa = imresize(v_AlphaTa, [100 100], 'lanczos3' );
+
