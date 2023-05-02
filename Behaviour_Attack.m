@@ -37,7 +37,9 @@ v_AlphaBM = imresize(v_AlphaBM, [ImageWidth ImageWidth], 'lanczos3' );
 [v_ImageBF,v_AlphaBF,v_ImageF,v_AlphaF, v_ImageBat, v_AlphaBat]=LoadImageBase();
 [v_ImageBoom,v_AlphaBoom,v_ImageN,v_AlphaN,v_ImageEmpty,v_AlphaEmpty]=LoadImageBoom();
 [v_ImageFR,v_AlphaFR,v_ImageFB,v_AlphaFB]=LoadImageFlag();
-[v_ImageFence,v_AlphaFence, v_ImageHome,v_AlphaHome]=LoadImageOther();
+[v_ImageFence,v_AlphaFence]=LoadImageFence();
+[v_ImageHome,v_AlphaHome]=LoadImageHome();
+
 % draw graphic
 [fHandler]=InitializeGraphicN();
 
@@ -45,8 +47,9 @@ v_AlphaBM = imresize(v_AlphaBM, [ImageWidth ImageWidth], 'lanczos3' );
 [BasesPlot]=InitializeBase(v_ImageBF,v_AlphaBF);
 
 % draw fence and house
-[OtherPlot]=InitializeOther(v_ImageFence,v_AlphaFence, v_ImageHome,v_AlphaHome);
+[FencePlot]=InitializeFence(v_ImageFence,v_AlphaFence);
 
+[HousePlot]=InitializeHouse(v_ImageHome,v_AlphaHome);
 
 % draw flight
 [FightsPlot]=InitializeFight(v_ImageF,v_AlphaF);
@@ -96,6 +99,7 @@ while (timeTick < TimeSteps)
                 pause(0.1);
                 sound(bomb,bombFs);
                 delete(BombsPlot); 
+                delete(OtherPlot);
                 count=0;
 
                 for FightIndexTMP = 1:BluesNum
