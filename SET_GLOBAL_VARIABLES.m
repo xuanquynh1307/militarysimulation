@@ -6,6 +6,7 @@ global EnvironmentWidth ImageWidth SafeDistance AlignmentRange CohesionRange...
      Reds  Blues xi yi DameOfBlue DameOfRed Fights FightsNum BattleshipsNum Battleships TanksNum Tanks ...
     ShootDistanceB ShootDistanceR MaxRedNum MaxBlueNum BloodPos RedsNum  ...
     RedsLQNum RedsLQ MaxRedLQHP ObstaclesRLQ...
+    RedsLQ1Num RedsLQ1 MaxRedLQ1HP ObstaclesRLQ1...
     Target1  Target2 SizeHPBar LengthHPBar BaseR BaseB Targets...
     deviationXB  deviationXR deviationYR ...
     AccuracyB AccuracyR DieRNum DieBNum ...
@@ -69,8 +70,9 @@ RedsLQ = zeros(RedsLQNum,15); % initialize boids matrix
 %}
 %Blues(:,1:2) = EnvironmentWidth*(2*rand([BluesNum,2])-1); % set random positionB
 MaxLQHP = 120;
-RedsLQ(:,1) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-550; % set random position
-RedsLQ(:,2) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-400; % set random position
+RedsLQ(:,1) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-0; % set random position
+RedsLQ(:,2) = EnvironmentWidth/10*(rand([RedsLQNum,1]))-0; % set random position
+RedsLQ(:,3) = 100;
 RedsLQ(:,4:5) = 200; %200*(2*rand([BoidsNum,2])-1); % set random velocity
 RedsLQ(:,10) = 5;%*(rand([BoidsNum,1]) + 0.2); % set maxspeed
 RedsLQ(:,11) = 0.2; % set maxforce
@@ -83,6 +85,27 @@ for i=1:RedsLQNum
     ObstaclesRLQ(i, 2) = 200;
 end
 
+%% List of LQ1
+RedsLQ1 = zeros(RedsLQ1Num,15); % initialize boids matrix
+%{1-3 position, 4-6 velocity, 7-9 accelaration, 10 maxspeed, 11 maxforce, 12 angle,
+% 13 max see ahead (for collision avoidance), 14 max avoid force (collision avoidance)
+%}
+%Blues(:,1:2) = EnvironmentWidth*(2*rand([BluesNum,2])-1); % set random positionB
+MaxLQ1HP = 120;
+RedsLQ1(:,1) = EnvironmentWidth/10*(rand([RedsLQ1Num,1]))-400; % set random position
+RedsLQ1(:,2) = EnvironmentWidth/10*(rand([RedsLQ1Num,1]))-400; % set random position
+RedsLQ1(:,3) = 100;
+RedsLQ1(:,4:5) = 200; %200*(2*rand([BoidsNum,2])-1); % set random velocity
+RedsLQ1(:,10) = 5;%*(rand([BoidsNum,1]) + 0.2); % set maxspeed
+RedsLQ1(:,11) = 0.2; % set maxforce
+RedsLQ1(:,13) = 200; % set max see ahead
+RedsLQ1(:,14) = 10; % set max avoid force
+RedsLQ1(:,15) = MaxLQ1HP; % set blood
+ObstaclesRLQ1=zeros(RedsLQ1Num,4);
+for i=1:RedsLQ1Num
+    ObstaclesRLQ1(i, 1) = -380;
+    ObstaclesRLQ1(i, 2) = 200;
+end
     
 %% Set static Obstacle data
 ObstaclesNum = 6;

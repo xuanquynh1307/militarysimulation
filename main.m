@@ -2,7 +2,7 @@ function main()
 %% Global variables
 global TimeSteps;
 TimeSteps = 50000;
-global RedsNum RedsLQNum;
+global RedsNum RedsLQNum RedsLQ1Num;
 global Targets;
 global BluesNum;
 global Blues Reds;
@@ -18,7 +18,8 @@ SET_GLOBAL_VARIABLES()
 SetObstacles()
 BluesNum = 6; % Choose number of Boids to demo
 RedsNum = 4; % Choose number of Boids to demo
-RedsLQNum = 1;
+RedsLQNum = 2;
+RedsLQ1Num = 2;
 Targets = zeros(1,RedsNum);
 RangeView=0;
 Behaviour_Attack()
